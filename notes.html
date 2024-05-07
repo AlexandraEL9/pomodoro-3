@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <title>Pomodoro app</title>
+</head>
+<body>
+  <div id="timer-view">
+    <!-- Header -->
+    <header class="title">
+      <h1>pomodoro</h1>
+    </header>
+
+    <!-- Navigation menu for timer modes -->
+    <nav>
+      <ul id="pomodoro-mode-menu">
+        <li class="selected" id="select-pomodoro">
+          <p>pomodoro</p>
+        </li>
+        <li class="" id="select-short-break">
+          <p>short break</p>
+        </li>
+        <li class="" id="select-long-break">
+          <p>long break</p>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main pomodoro timer section -->
+    <main class="pomodoro-container">
+      <div class="inner-container">
+        <!-- Timer display -->
+        <div class="time-container">
+          <div id="time-remaining-left" class="time-remaining">12</div>
+          <div class="colon">:</div>
+          <div id="time-remaining-right" class="time-remaining">23</div>
+        </div>
+
+        <!-- Pause/Start button -->
+        <div class="pause-button" id="pause">START</div>
+      </div>
+
+      <!-- SVG circle for timer animation -->
+      <svg x="0px" y="0px" viewBox="0 0 400 400" xml:space="preserve" class="svg">
+        <circle class="circle-bg" cx="200" cy="200" r="159.5" transform="rotate(270 200 200)" />
+        <circle id="pomodoro-time" class="circle" cx="200" cy="200" r="159.5" stroke-linecap="round" transform="rotate(270 200 200)" />
+      </svg>
+    </main>
+
+    <!-- Footer for settings -->
+    <footer class="settings">
+      <img src="icon-settings.svg" alt="open settings" id="open-modal" />
+    </footer>
+  </div>
+
+  <!-- Settings modal -->
+  <aside class="modal hidden" id="modal">
+    <header>
+      <h2>Settings</h2>
+      <img src="icon-close.svg" alt="close" id="modal-close" />
+    </header>
+    <section>
+      <!-- Time settings -->
+      <h3>TIME (MINUTES)</h3>
+      <div class="container">
+        <!-- Pomodoro duration setting -->
+        <div class="selection">
+          <label for="pm">pomodoro</label>
+          <div class="stepper" id="pomodoro-minutes">
+            <input id="pm" type="text" value="25" ></input>
+            <div>
+              <!-- SVG arrows for incrementing/decrementing -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7" class="up">
+                <path fill="none" stroke-width="2" d="M1 6l6-4 6 4" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7" class="down">
+                <path fill="none" stroke-width="2" d="M1 1l6 4 6-4" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- Short break duration setting -->
+        <div class="selection">
+          <label for="sbt">short break</label>
+          <div class="stepper" id="short-break-time">
+            <input id="sbt" type="text" value="5" ></input>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7" class="up">
+                <path fill="none" stroke-width="2" d="M1 6l6-4 6 4" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7" class="down">
+                <path fill="none" stroke-width="2" d="M1 1l6 4 6-4" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <!-- Long break duration setting -->
+        <div class="selection">
+          <label for="lbt">long break</label>
+          <div class="stepper" id="long-break-time">
+            <input id="lbt" type="text" value="25" ></input>
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7" class="up">
+                <path fill="none" stroke-width="2" d="M1 6l6-4 6 4" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7" class="down">
+                <path fill="none" stroke-width="2" d="M1 1l6 4 6-4" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Font and color settings -->
+      <div class="circle-selection">
+        <h4>FONT</h4>
+        <div class="container">
+          <!-- Font options -->
+          <div class="circle-font selected" id="font-kumbah-sans">Aa</div>
+          <div class="circle-font" id="font-roboto-slab">Aa</div>
+          <div class="circle-font" id="font-mono-space">Aa</div>
+        </div>
+      </div>
+      <div class="circle-selection">
+        <h4>COLOR</h4>
+        <div class="container">
+          <!-- Color options -->
+          <div class="circle-color selected" id="color-tomato">
+            <img src="checkmark.svg" alt="checkmark" />
+          </div>
+          <div class="circle-color" id="color-aqua">
+            <img src="checkmark.svg" alt="checkmark" />
+          </div>
+          <div class="circle-color" id="color-purple">
+            <img src="checkmark.svg" alt="checkmark" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Apply settings button -->
+    <div class="apply" id="apply">
+      <span>Apply</span>
+    </div>
+  </aside>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

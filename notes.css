@@ -1,0 +1,159 @@
+/* Resetting default styles */
+body {
+    font-family: "Kumbh Sans", sans-serif; /* Set the default font family */
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    background-color: #1e213f; /* Set background color */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    min-height: 100vh; /* Ensure the body takes at least the height of the viewport */
+  }
+  
+  p, ul, h2, li, input {
+    margin: 0; /* Remove margins for specific elements */
+    padding: 0; /* Remove padding for specific elements */
+  }
+  
+  .hidden {
+    display: none; /* Hide elements with this class */
+  }
+  
+  /* Title styling */
+  .title {
+    font-weight: 700; /* Set font weight to bold */
+    margin-top: 2rem; /* Set top margin */
+    margin: 0 auto; /* Center align */
+    color: #d7e0ff; /* Set text color */
+    z-index: 5; /* Set z-index for stacking order */
+    text-align: center; /* Center align text */
+    margin-bottom: 2.4375rem; /* Set bottom margin */
+    font-family: "Kumbh Sans", sans-serif; /* Set font family */
+  }
+  
+  /* Media queries for title */
+  @media only screen and (min-width: 767px) {
+    .title {
+      margin-top: 5rem; /* Adjust margin for screens wider than 767px */
+    }
+  }
+  
+  @media only screen and (min-width: 900px) {
+    .title {
+      margin-top: 3rem; /* Adjust margin for screens wider than 900px */
+    }
+  }
+  
+  @media only screen and (min-width: 767px) {
+    .title {
+      margin-bottom: 3.4375rem; /* Adjust bottom margin for screens wider than 767px */
+    }
+  }
+  
+  .title h1 {
+    font-size: 1.5rem; /* Set font size for h1 */
+  }
+  
+  @media only screen and (min-width: 767px) {
+    .title h1 {
+      font-size: 2rem; /* Adjust font size for screens wider than 767px */
+      margin: 0; /* Remove margin for h1 */
+    }
+  }
+  
+  /* Navigation styling */
+  nav {
+    font-weight: 700; /* Set font weight to bold */
+    margin-bottom: 3rem; /* Set bottom margin */
+    z-index: 5; /* Set z-index for stacking order */
+    position: relative; /* Set position relative */
+    display: -webkit-box; /* Use flexbox for layout */
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center; /* Center align horizontally */
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  @media only screen and (min-width: 767px) {
+    nav {
+      margin-bottom: 6.8125rem; /* Adjust bottom margin for screens wider than 767px */
+    }
+  }
+  
+  @media only screen and (min-width: 900px) {
+    nav {
+      margin-bottom: 2.8125rem; /* Adjust bottom margin for screens wider than 900px */
+    }
+  }
+  
+  nav .container {
+    width: 20.4375rem; /* Set container width */
+  }
+  
+  nav ul {
+    list-style: none; /* Remove default list styles */
+    display: -webkit-box; /* Use flexbox for layout */
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal; /* Set flex direction */
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center; /* Center align vertically */
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center; /* Center align horizontally */
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 20.4375rem; /* Set width */
+    height: 3.9375rem; /* Set height */
+    border-radius: 1.9688rem; /* Set border radius */
+    background-color: #161932; /* Set background color */
+  }
+  
+  @media only screen and (min-width: 767px) {
+    nav ul {
+      width: 23.3125rem; /* Adjust width for screens wider than 767px */
+    }
+  }
+  
+  nav ul li {
+    color: #d7e0ff; /* Set text color */
+    text-align: center; /* Center align text */
+    font-size: 0.75rem; /* Set font size */
+    border-radius: 1.6563rem; /* Set border radius */
+    width: 32.41%; /* Set width */
+    height: 76.1%; /* Set height */
+    display: -webkit-box; /* Use flexbox for layout */
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center; /* Center align vertically */
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center; /* Center align horizontally */
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  
+  nav ul li:hover {
+    cursor: pointer; /* Change cursor to pointer on hover */
+  }
+  
+  nav ul li.selected:hover {
+    cursor: auto; /* Prevent hover cursor for selected item */
+  }
+  
+  nav ul .selected {
+    background-color: #f87070; /* Set background color for selected item */
+    color: #1e213f; /* Set text color for selected item */
+  }
+
+  
+  This CSS code mainly handles the 
+  layout, styling, and responsiveness 
+  of the title, navigation menu, and 
+  associated elements in the Pomodoro 
+  app interface. It uses flexbox for 
+  layout and media queries to adjust 
+  styles based on different screen 
+  sizes. 
